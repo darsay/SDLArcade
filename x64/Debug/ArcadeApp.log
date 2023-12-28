@@ -1,0 +1,5 @@
+﻿  Color.cpp
+C:\Users\Nacho\Documents\Netspot\StripeServer\ArcadeApp\ArcadeApp\Graphics\Color.cpp(120,55): warning C4244: 'argumento': conversión de 'float' a 'uint8_t'; posible pérdida de datos
+C:\Users\Nacho\Documents\Netspot\StripeServer\ArcadeApp\ArcadeApp\Graphics\Color.cpp(121,59): warning C4244: 'argumento': conversión de 'float' a 'uint8_t'; posible pérdida de datos
+C:\Users\Nacho\Documents\Netspot\StripeServer\ArcadeApp\ArcadeApp\Graphics\Color.cpp(122,57): warning C4244: 'argumento': conversión de 'float' a 'uint8_t'; posible pérdida de datos
+  ArcadeApp.vcxproj -> C:\Users\Nacho\Documents\Netspot\StripeServer\ArcadeApp\x64\Debug\ArcadeApp.exe
