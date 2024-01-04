@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Utils/Vec2D.h"
+#include "Vec2D.h"
 #include <vector>
 
 class Shape

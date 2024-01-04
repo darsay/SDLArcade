@@ -1,5 +1,5 @@
 #include "Circle.h"
-#include "../Utils/Utils.h"
+#include "Utils.h"
 
 Circle::Circle() : Circle(Vec2D::Zero, 0)
 {

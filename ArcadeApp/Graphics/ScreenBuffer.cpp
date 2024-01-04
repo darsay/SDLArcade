@@ -1,11 +1,3 @@
-/*
- * ScreenBuffer.cpp
- *
- *  Created on: Jan. 9, 2019
- *      Author: serge
- */
-
-
 #include "ScreenBuffer.h"
 #include <SDL.h>
 #include <cassert>
@@ -77,7 +69,7 @@ void ScreenBuffer::SetPixel(const Color& color, int x, int y)
 	{
 		SDL_LockSurface(mSurface);
 
-		uint32_t* pixels = (uint32_t*)mSurface->pixels;
+		uint32_t* pixels = static_cast<uint32_t*>(mSurface->pixels);
 
 		size_t index = GetIndex(y, x);
 		Color surfaceColor = Color(pixels[index]); //destinationColor
@@ -87,7 +79,7 @@ void ScreenBuffer::SetPixel(const Color& color, int x, int y)
 	}
 }
 
-uint32_t ScreenBuffer::GetIndex(int r, int c)
+uint32_t ScreenBuffer::GetIndex(int r, int c) const
 {
 	assert(mSurface);
 	if (mSurface)

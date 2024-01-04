@@ -1,5 +1,5 @@
 #include "Line2D.h"
-#include "../Utils/Utils.h"
+#include "Utils.h"
 #include <cmath>
 
 

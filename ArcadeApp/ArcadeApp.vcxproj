@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -80,6 +80,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -94,6 +95,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -108,6 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,6 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,6 +136,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="App\App.cpp" />
+    <ClCompile Include="Games\BreakOut.cpp" />
+    <ClCompile Include="Input\GameController.cpp" />
+    <ClCompile Include="Input\InputController.cpp" />
+    <ClCompile Include="Scenes\ArcadeScene.cpp" />
+    <ClCompile Include="Scenes\GameScene.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\AARectangle.cpp" />
     <ClCompile Include="Graphics\Color.cpp" />
@@ -141,10 +151,20 @@
     <ClCompile Include="Graphics\ScreenBuffer.cpp" />
     <ClCompile Include="Graphics\Screen.cpp" />
     <ClCompile Include="Shapes\Triangle.cpp" />
+    <ClCompile Include="Utils\FileCommandLoader.cpp" />
     <ClCompile Include="Utils\Utils.cpp" />
     <ClCompile Include="Utils\Vec2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="App\App.h" />
+    <ClInclude Include="Games\BreakOut.h" />
+    <ClInclude Include="Games\Game.h" />
+    <ClInclude Include="Input\GameController.h" />
+    <ClInclude Include="Input\InputAction.h" />
+    <ClInclude Include="Input\InputController.h" />
+    <ClInclude Include="Scenes\ArcadeScene.h" />
+    <ClInclude Include="Scenes\GameScene.h" />
+    <ClInclude Include="Scenes\Scene.h" />
     <ClInclude Include="Shapes\Circle.h" />
     <ClInclude Include="Shapes\AARectangle.h" />
     <ClInclude Include="Graphics\Color.h" />
@@ -153,6 +173,7 @@
     <ClInclude Include="Shapes\Shape.h" />
     <ClInclude Include="Shapes\Line2D.h" />
     <ClInclude Include="Shapes\Triangle.h" />
+    <ClInclude Include="Utils\FileCommandLoader.h" />
     <ClInclude Include="Utils\Utils.h" />
     <ClInclude Include="Utils\Vec2D.h" />
   </ItemGroup>

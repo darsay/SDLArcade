@@ -7,7 +7,7 @@ struct SDL_Surface;
 class ScreenBuffer
 {
 	SDL_Surface* mSurface;
-	uint32_t GetIndex(int r, int c);
+	uint32_t GetIndex(int r, int c) const;
 
 public:
 	ScreenBuffer();

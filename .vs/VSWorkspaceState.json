@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ArcadeApp",
+    "\\ArcadeApp\\App",
+    "\\ArcadeApp\\Graphics",
+    "\\ArcadeApp\\Scenes"
   ],
-  "SelectedNode": "\\ArcadeApp.sln",
+  "SelectedNode": "\\ArcadeApp\\Scenes\\ArcadeScene.cpp",
   "PreviewInSolutionExplorer": false
 }

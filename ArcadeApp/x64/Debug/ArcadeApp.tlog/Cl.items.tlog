@@ -1,0 +1,17 @@
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\App\App.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\App.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Input\GameController.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\GameController.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Input\InputController.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\InputController.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\ArcadeScene.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\ArcadeScene.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\GameScene.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\GameScene.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Shapes\Circle.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Circle.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Shapes\AARectangle.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\AARectangle.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\Color.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Color.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Shapes\Shape.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Shape.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Shapes\Line2D.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Line2D.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\main.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\main.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\ScreenBuffer.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\ScreenBuffer.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\Screen.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Screen.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Shapes\Triangle.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Triangle.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Utils\FileCommandLoader.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\FileCommandLoader.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Utils\Utils.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Utils.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Utils\Vec2D.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Vec2D.obj

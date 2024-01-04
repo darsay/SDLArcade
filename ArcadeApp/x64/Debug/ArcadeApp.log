@@ -1,0 +1,45 @@
+﻿  App.cpp
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Input\GameController.h(6,22): warning C4099: 'GameController': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Input\GameController.h(6,7): message : vea la declaración de 'GameController'
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\App\App.cpp(30,12): warning C4101: 'sdlEvent': variable local sin referencia
+  GameController.cpp
+  InputController.cpp
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Input\GameController.h(6,22): warning C4099: 'GameController': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Input\GameController.h(6,7): message : vea la declaración de 'GameController'
+  ArcadeScene.cpp
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\ArcadeScene.cpp(45,71): warning C4244: 'argumento': conversión de 'uint32_t' a 'float'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\ArcadeScene.cpp(45,51): warning C4244: 'argumento': conversión de 'uint32_t' a 'float'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\ArcadeScene.cpp(47,80): warning C4244: 'argumento': conversión de 'uint32_t' a 'float'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\ArcadeScene.cpp(47,51): warning C4244: 'argumento': conversión de 'uint32_t' a 'float'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\ArcadeScene.cpp(48,69): warning C4244: 'argumento': conversión de 'uint32_t' a 'float'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\ArcadeScene.cpp(48,44): warning C4244: 'argumento': conversión de 'uint32_t' a 'float'; posible pérdida de datos
+  GameScene.cpp
+  Circle.cpp
+  AARectangle.cpp
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Shapes\AARectangle.cpp(63,38): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Shapes\AARectangle.cpp(62,65): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+  Color.cpp
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\Color.cpp(120,68): warning C4244: 'argumento': conversión de 'float' a 'uint8_t'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\Color.cpp(121,72): warning C4244: 'argumento': conversión de 'float' a 'uint8_t'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\Color.cpp(122,70): warning C4244: 'argumento': conversión de 'float' a 'uint8_t'; posible pérdida de datos
+  Shape.cpp
+  Line2D.cpp
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Shapes\Line2D.cpp(43,16): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  main.cpp
+  ScreenBuffer.cpp
+  Screen.cpp
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\Screen.cpp(86,55): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\Screen.cpp(86,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\Screen.cpp(96,10): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\Screen.cpp(97,10): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\Screen.cpp(98,10): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\Screen.cpp(99,10): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+  Triangle.cpp
+  FileCommandLoader.cpp
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Utils\FileCommandLoader.cpp(31,54): warning C4806: '!=': operación no segura: ningún valor del tipo 'bool' promovido al tipo 'const unsigned __int64' puede igualar la constante proporcionada
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Utils\FileCommandLoader.cpp(111,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Utils\FileCommandLoader.cpp(111,15): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Utils.cpp
+  Vec2D.cpp
+  Generando código...
+  ArcadeApp.vcxproj -> C:\Users\Nacho\Documents\GitHub\SDLArcade\x64\Debug\ArcadeApp.exe

@@ -1,15 +1,15 @@
 #include "Screen.h"
-#include "../Utils/Vec2D.h"
+#include "Vec2D.h"
 #include <SDL.h>
 #include <cassert>
 #include <algorithm>
 #include <vector>
 
-#include "../Utils/Utils.h"
-#include "../Shapes/Line2D.h"
-#include "../Shapes/Triangle.h"
-#include "../Shapes/AARectangle.h"
-#include "../Shapes/Circle.h"
+#include "Utils.h"
+#include "Line2D.h"
+#include "Triangle.h"
+#include "AARectangle.h"
+#include "Circle.h"
 
 Screen::Screen() : mWidth(0), mHeight(0), moptrWindow(nullptr), mnoptrWindowSurface(nullptr)
 {
@@ -40,7 +40,7 @@ SDL_Window* Screen::Init(uint32_t w, uint32_t h, uint32_t mag)
 	if (moptrWindow) {
 		mnoptrWindowSurface = SDL_GetWindowSurface(moptrWindow);
 
-		SDL_PixelFormat* pixelFormat = mnoptrWindowSurface->format;
+		SDL_PixelFormat* pixelFormat = SDL_AllocFormat(SDL_PIXELFORMAT_RGBA8888);
 
 		Color::InitColorFormat(pixelFormat);
 
@@ -188,7 +188,7 @@ void Screen::Draw(const Circle& circle, const Color& color, bool fill, const Col
 	std::vector<Vec2D> circlePoints;
 	std::vector<Line2D> lines;
 
-	float angle = TWO_PI / float(NUM_CIRCLE_SEGMENTS);
+	float angle = TWO_PI / static_cast<float>(NUM_CIRCLE_SEGMENTS);
 
 	Vec2D p0 = Vec2D(circle.GetCenterPoint().GetX() + circle.GetRadius(), circle.GetCenterPoint().GetY());
 	Vec2D p1 = p0;
@@ -223,70 +223,78 @@ void Screen::ClearScreen()
 }
 
 void Screen::FillPoly(const std::vector<Vec2D>& points, const Color& color) {
-	if (points.size() > 0) {
-		float top = points[0].GetY();
-		float bottom = points[0].GetY();
-		float right = points[0].GetX();
-		float left = points[0].GetX();
+	if (points.empty()) {
+		return;
+	}
 
-		// Calculate bounding box
-		for (size_t i = 1; i < points.size(); ++i) {
-			if (points[i].GetY() < top) {
-				top = points[i].GetY();
+	float top = points[0].GetY();
+	float bottom = points[0].GetY();
+	float right = points[0].GetX();
+	float left = points[0].GetX();
+
+	// Calculate bounding box
+	for (size_t i = 1; i < points.size(); ++i) {
+		float y = points[i].GetY();
+		float x = points[i].GetX();
+
+		if (y < top) {
+			top = y;
+		}
+		if (y > bottom) {
+			bottom = y;
+		}
+		if (x > right) {
+			right = x;
+		}
+		if (x < left) {
+			left = x;
+		}
+	}
+
+	for (int pixelY = static_cast<int>(top); pixelY <= static_cast<int>(bottom); ++pixelY) {
+		std::vector<float> nodeXVec;
+
+		size_t j = points.size() - 1;
+
+		for (size_t i = 0; i < points.size(); ++i) {
+			float pointiY = points[i].GetY();
+			float pointjY = points[j].GetY();
+			float pointiX = points[i].GetX();
+
+			if ((pointiY <= static_cast<float>(pixelY) && pointjY > static_cast<float>(pixelY)) ||
+				(pointjY <= static_cast<float>(pixelY) && pointiY > static_cast<float>(pixelY))) {
+				float denom = pointjY - pointiY;
+				if (IsEqual(denom, 0)) {
+					continue;
+				}
+
+				float x = pointiX + (pixelY - pointiY) / denom * (points[j].GetX() - pointiX);
+				nodeXVec.push_back(x);
 			}
-			if (points[i].GetY() > bottom) {
-				bottom = points[i].GetY();
-			}
-			if (points[i].GetX() > right) {
-				right = points[i].GetX();
-			}
-			if (points[i].GetX() < left) {
-				left = points[i].GetX();
-			}
+
+			j = i;
 		}
 
-		for (int pixelY = static_cast<int>(top); pixelY <= static_cast<int>(bottom); ++pixelY) {
-			std::vector<float> nodeXVec;
+		std::sort(nodeXVec.begin(), nodeXVec.end(), std::less<>());
 
-			size_t j = points.size() - 1;
-
-			for (size_t i = 0; i < points.size(); ++i) {
-				float pointiY = points[i].GetY();
-				float pointjY = points[j].GetY();
-
-				if ((pointiY <= static_cast<float>(pixelY) && pointjY > static_cast<float>(pixelY)) ||
-					(pointjY <= static_cast<float>(pixelY) && pointiY > static_cast<float>(pixelY))) {
-					float denom = pointjY - pointiY;
-					if (IsEqual(denom, 0)) {
-						continue;
-					}
-
-					float x = points[i].GetX() + (pixelY - pointiY) / denom * (points[j].GetX() - points[i].GetX());
-					nodeXVec.push_back(x);
-				}
-
-				j = i;
+		for (size_t k = 0; k < nodeXVec.size(); k += 2) {
+			if (nodeXVec[k] > right) {
+				break;
 			}
-			std::sort(nodeXVec.begin(), nodeXVec.end(), std::less<>());
 
-			for (size_t k = 0; k < nodeXVec.size(); k += 2) {
-				if (nodeXVec[k] > right) {
-					break;
+			if (nodeXVec[k + 1] > left) {
+				if (nodeXVec[k] < left) {
+					nodeXVec[k] = left;
+				}
+				if (nodeXVec[k + 1] > right) {
+					nodeXVec[k + 1] = right;
 				}
 
-				if (nodeXVec[k + 1] > left) {
-					if (nodeXVec[k] < left) {
-						nodeXVec[k] = left;
-					}
-					if (nodeXVec[k + 1] > right) {
-						nodeXVec[k + 1] = right;
-					}
-
-					for (int pixelX = static_cast<int>(nodeXVec[k]); pixelX < static_cast<int>(nodeXVec[k + 1]); ++pixelX) {
-						Draw(pixelX, pixelY, color);
-					}
+				for (int pixelX = static_cast<int>(nodeXVec[k]); pixelX < static_cast<int>(nodeXVec[k + 1]); ++pixelX) {
+					Draw(pixelX, pixelY, color);
 				}
 			}
 		}
 	}
 }
+

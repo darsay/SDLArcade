@@ -1,5 +1,5 @@
 #include "AARectangle.h"
-#include "../Utils/Utils.h"
+#include "Utils.h"
 
 AARectangle::AARectangle() : AARectangle(Vec2D::Zero, Vec2D::Zero)
 {
@@ -59,7 +59,8 @@ bool AARectangle::ContainsPoint(const Vec2D& point) const
 
 AARectangle AARectangle::Inset(const AARectangle& rect, Vec2D& insets)
 {
-	return AARectangle(rect.GetTopLeft() + insets, rect.GetWidth() - 2 * insets.GetX(), rect.GetHeight() - 2 * insets.GetY() );
+	return AARectangle(rect.GetTopLeft() + insets, rect.GetWidth() - 2 * insets.GetX(),
+	                   rect.GetHeight() - 2 * insets.GetY());
 
 }
 

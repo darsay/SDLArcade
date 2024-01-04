@@ -111,15 +111,15 @@ Color Color::Evaluate1MinueSourceAlpha(const Color& source, const Color& destina
 	//SourceRGB * sourceAlpha + DestinationRGB * (1 - sourceAlpha)
 	uint8_t alpha = source.GetAlpha();
 
-	float sourceAlpha = float(alpha) / 255.0f;
+	float sourceAlpha = static_cast<float>(alpha) / 255.0f;
 	float destAlpha = 1.0f - sourceAlpha;
 
 	Color outColor;
 
 	outColor.SetAlpha(255);
-	outColor.SetRed(float(source.GetRed()) * sourceAlpha + destination.GetRed() * destAlpha);
-	outColor.SetGreen(float(source.GetGreen()) * sourceAlpha + destination.GetGreen() * destAlpha);
-	outColor.SetBlue(float(source.GetBlue()) * sourceAlpha + destination.GetBlue() * destAlpha);
+	outColor.SetRed(static_cast<float>(source.GetRed()) * sourceAlpha + destination.GetRed() * destAlpha);
+	outColor.SetGreen(static_cast<float>(source.GetGreen()) * sourceAlpha + destination.GetGreen() * destAlpha);
+	outColor.SetBlue(static_cast<float>(source.GetBlue()) * sourceAlpha + destination.GetBlue() * destAlpha);
 
-	return source;
+	return outColor;
 }
