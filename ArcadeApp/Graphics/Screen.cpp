@@ -27,8 +27,9 @@ Screen::~Screen()
 
 SDL_Window* Screen::Init(uint32_t w, uint32_t h, uint32_t mag)
 {
-	if (SDL_Init(SDL_INIT_VIDEO)) {
-		std::printf("Error SDL_Init Failed \n");
+	if (SDL_Init(SDL_INIT_VIDEO))
+	{
+		std::cout << "Error SDL_Init Failed" << std::endl;
 		return nullptr;
 	}
 
@@ -37,7 +38,8 @@ SDL_Window* Screen::Init(uint32_t w, uint32_t h, uint32_t mag)
 
 	moptrWindow = SDL_CreateWindow("Arcade", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mWidth * mag, mHeight * mag, 0);
 
-	if (moptrWindow) {
+	if (moptrWindow)
+	{
 		mnoptrWindowSurface = SDL_GetWindowSurface(moptrWindow);
 
 		SDL_PixelFormat* pixelFormat = SDL_AllocFormat(SDL_PIXELFORMAT_RGBA8888);
@@ -50,6 +52,7 @@ SDL_Window* Screen::Init(uint32_t w, uint32_t h, uint32_t mag)
 
 		mBackBuffer.Clear(mClearColor);
 	}
+
 
 	return moptrWindow;
 }
@@ -222,76 +225,83 @@ void Screen::ClearScreen()
 	}
 }
 
-void Screen::FillPoly(const std::vector<Vec2D>& points, const Color& color) {
-	if (points.empty()) {
-		return;
-	}
-
-	float top = points[0].GetY();
-	float bottom = points[0].GetY();
-	float right = points[0].GetX();
-	float left = points[0].GetX();
-
-	// Calculate bounding box
-	for (size_t i = 1; i < points.size(); ++i) {
-		float y = points[i].GetY();
-		float x = points[i].GetX();
-
-		if (y < top) {
-			top = y;
+void Screen::FillPoly(const std::vector<Vec2D>& points, const Color& color)
+{
+	if (points.size() > 0)
+	{
+		float top = points[0].GetY();
+		float bottom = points[0].GetY();
+		float right = points[0].GetX();
+		float left = points[0].GetX();
+		// Find the most extreme points on the polygon
+		for (size_t i = 1; i < points.size(); i++)
+		{
+			if (points[i].GetY() < top)
+			{
+				top = points[i].GetY();
+			}
+			if (points[i].GetY() > bottom)
+			{
+				bottom = points[i].GetY();
+			}
+			if (points[i].GetX() < left)
+			{
+				left = points[i].GetX();
+			}
+			if (points[i].GetX() > right)
+			{
+				right = points[i].GetX();
+			}
 		}
-		if (y > bottom) {
-			bottom = y;
-		}
-		if (x > right) {
-			right = x;
-		}
-		if (x < left) {
-			left = x;
-		}
-	}
+		// Go through polygon top to bottom
+		for (int pixelY = top; pixelY < bottom; pixelY++)
+		{
+			std::vector<float> nodeXVector;
+			size_t j = points.size() - 1;
 
-	for (int pixelY = static_cast<int>(top); pixelY <= static_cast<int>(bottom); ++pixelY) {
-		std::vector<float> nodeXVec;
-
-		size_t j = points.size() - 1;
-
-		for (size_t i = 0; i < points.size(); ++i) {
-			float pointiY = points[i].GetY();
-			float pointjY = points[j].GetY();
-			float pointiX = points[i].GetX();
-
-			if ((pointiY <= static_cast<float>(pixelY) && pointjY > static_cast<float>(pixelY)) ||
-				(pointjY <= static_cast<float>(pixelY) && pointiY > static_cast<float>(pixelY))) {
-				float denom = pointjY - pointiY;
-				if (IsEqual(denom, 0)) {
-					continue;
+			for (size_t i = 0; i < points.size(); i++)
+			{
+				float pointIY = points[i].GetY();
+				float pointJY = points[j].GetY();
+				if ((pointIY <= (float)pixelY && pointJY > (float)pixelY) || (pointJY <= (float)pixelY && pointIY > (float)pixelY))
+				{
+					float denominator = pointJY - pointIY;
+					if (IsEqual(denominator, 0))
+					{
+						continue;
+					}
+					else
+					{
+						float x = points[i].GetX() + (pixelY - pointIY) / (denominator) * (points[j].GetX() - points[i].GetX());
+						nodeXVector.push_back(x);
+					}
 				}
-
-				float x = pointiX + (pixelY - pointiY) / denom * (points[j].GetX() - pointiX);
-				nodeXVec.push_back(x);
+				j = i;
 			}
 
-			j = i;
-		}
-
-		std::sort(nodeXVec.begin(), nodeXVec.end(), std::less<>());
-
-		for (size_t k = 0; k < nodeXVec.size(); k += 2) {
-			if (nodeXVec[k] > right) {
-				break;
-			}
-
-			if (nodeXVec[k + 1] > left) {
-				if (nodeXVec[k] < left) {
-					nodeXVec[k] = left;
+			std::sort(nodeXVector.begin(), nodeXVector.end(), std::less<>());
+			for (size_t k = 0; k < nodeXVector.size(); k += 2)
+			{
+				if (nodeXVector[k] > right)
+				{
+					break;
 				}
-				if (nodeXVec[k + 1] > right) {
-					nodeXVec[k + 1] = right;
-				}
-
-				for (int pixelX = static_cast<int>(nodeXVec[k]); pixelX < static_cast<int>(nodeXVec[k + 1]); ++pixelX) {
-					Draw(pixelX, pixelY, color);
+				// Bound X values so they don't go out of bounds
+				if (nodeXVector[k + 1] > left)
+				{
+					if (nodeXVector[k] < left)
+					{
+						nodeXVector[k] = left;
+					}
+					if (nodeXVector[k + 1] > right)
+					{
+						nodeXVector[k + 1] = right;
+					}
+					// Draw the line
+					for (int pixelX = nodeXVector[k]; pixelX < nodeXVector[k + 1]; pixelX++)
+					{
+						Draw(pixelX, pixelY, color);
+					}
 				}
 			}
 		}

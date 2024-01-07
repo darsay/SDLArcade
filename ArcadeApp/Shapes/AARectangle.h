@@ -11,8 +11,8 @@ public:
 	inline void SetTopLeftPoint(const Vec2D& topLeft) { mPoints[0] = topLeft; }
 	inline void SetBottomRightPoint(const Vec2D& bottomRight) { mPoints[1] = bottomRight; }
 
-	inline Vec2D GetTopLeft() const { return mPoints[0]; }
-	inline Vec2D GetBottomRight() const { return mPoints[1]; }
+	inline Vec2D GetTopLeftPoint() const { return mPoints[0]; }
+	inline Vec2D GetBottomRightPoint() const { return mPoints[1]; }
 
 	float GetWidth() const;
 	float GetHeight() const;

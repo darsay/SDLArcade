@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <vector>
 #include <memory>
+#include <string>
 
 #include "InputController.h"
 
@@ -24,6 +25,7 @@ public:
 	void PopScene();
 	Scene* TopScene() const;
 
+	static const std::string& GetBasePath();
 private:
 	Screen mScreen;
 	SDL_Window* mnotrWindow;

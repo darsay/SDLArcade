@@ -17,8 +17,9 @@ bool FileCommandLoader::LoadFile(const std::string& filePath) const
 
 	std::string line = "";
 
-	if (!inFile.is_open()) {
-		std::cout << "Could not open file: " << filePath << std::endl;
+	if (!inFile.is_open())
+	{
+		std::cout << "Could not open the file: " << filePath << std::endl;
 		return false;
 	}
 
@@ -28,13 +29,16 @@ bool FileCommandLoader::LoadFile(const std::string& filePath) const
 
 		size_t commandPos = std::string::npos;
 
-		if ((commandPos == line.find(":")) != std::string::npos) {
+		if ((commandPos = line.find(":")) != std::string::npos)
+		{
 			size_t dilimitPos = line.find_first_of(" ", commandPos);
 
-			if (dilimitPos == std::string::npos) {
+			if (dilimitPos == std::string::npos)
+			{
 				dilimitPos = line.length();
 			}
-			else {
+			else
+			{
 				dilimitPos -= 1;
 			}
 
@@ -73,13 +77,13 @@ bool FileCommandLoader::LoadFile(const std::string& filePath) const
 								command.parseFunc(params);
 								++lineNum;
 							}
-													}
+						}
 					}
 				}
 			}
+
 		}
 	}
-
 	return true;
 }
 

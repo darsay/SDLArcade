@@ -1,6 +1,13 @@
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\App\App.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\App.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\BreakOutGameLevel.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\BreakOutGameLevel.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\Block.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Block.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\Ball.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Ball.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\Excluder.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Excluder.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\BreakOut.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\BreakOut.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Input\GameController.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\GameController.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Input\InputController.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\InputController.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\Paddle.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Paddle.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\LevelBoundary.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\LevelBoundary.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\ArcadeScene.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\ArcadeScene.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\GameScene.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\GameScene.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Shapes\Circle.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Circle.obj
