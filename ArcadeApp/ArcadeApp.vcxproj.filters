@@ -87,10 +87,40 @@
     <ClCompile Include="Games\BreakOut\BreakOutGameLevel.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Games\Tetris\Tetromino.cpp">
+    <ClCompile Include="Games\Tetris\Tetrominos\TetrominoController.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Games\Tetris\Tetris.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Games\Tetris\PlayField.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Games\Tetris\NextBlockPanel.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Games\Tetris\Tetrominos\OTetromino.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Games\Tetris\Tetrominos\ITetromino.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Games\Tetris\GhostedBlock.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Games\Tetris\Tetrominos\JTetromino.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Games\Tetris\Tetrominos\LTetromino.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Games\Tetris\Tetrominos\STetromino.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Games\Tetris\Tetrominos\TTetromino.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Games\Tetris\Tetrominos\ZTetromino.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -176,10 +206,43 @@
     <ClInclude Include="Games\BreakOut\BreakOutGameLevel.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Games\Tetris\Tetromino.h">
+    <ClInclude Include="Games\Tetris\Tetrominos\TetrominoController.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Games\Tetris\Tetris.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Games\Tetris\PlayField.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Games\Tetris\NextBlockPanel.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Games\Tetris\Tetrominos\OTetromino.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Games\Tetris\Tetrominos\Tetromino.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Games\Tetris\Tetrominos\ITetromino.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Games\Tetris\GhostedBlock.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Games\Tetris\Tetrominos\JTetromino.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Games\Tetris\Tetrominos\LTetromino.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Games\Tetris\Tetrominos\STetromino.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Games\Tetris\Tetrominos\TTetromino.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Games\Tetris\Tetrominos\ZTetromino.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

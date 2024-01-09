@@ -80,7 +80,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris\Tetrominos;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -95,7 +95,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris\Tetrominos;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris\Tetrominos;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,7 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris\Tetrominos;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,10 +142,17 @@
     <ClCompile Include="Games\BreakOut\Ball.cpp" />
     <ClCompile Include="Games\BreakOut\Excluder.cpp" />
     <ClCompile Include="Games\BreakOut\BreakOut.cpp" />
+    <ClCompile Include="Games\Tetris\GhostedBlock.cpp" />
     <ClCompile Include="Input\GameController.cpp" />
     <ClCompile Include="Input\InputController.cpp" />
     <ClCompile Include="Games\BreakOut\Paddle.cpp" />
     <ClCompile Include="Games\BreakOut\LevelBoundary.cpp" />
+    <ClCompile Include="Games\Tetris\PlayField.cpp" />
+    <ClCompile Include="Games\Tetris\NextBlockPanel.cpp" />
+    <ClCompile Include="Games\Tetris\Tetrominos\OTetromino.cpp" />
+    <ClCompile Include="Games\Tetris\Tetrominos\ITetromino.cpp" />
+    <ClCompile Include="Games\Tetris\Tetrominos\JTetromino.cpp" />
+    <ClCompile Include="Games\Tetris\Tetrominos\LTetromino.cpp" />
     <ClCompile Include="Scenes\ArcadeScene.cpp" />
     <ClCompile Include="Scenes\GameScene.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
@@ -157,11 +164,14 @@
     <ClCompile Include="Graphics\ScreenBuffer.cpp" />
     <ClCompile Include="Graphics\Screen.cpp" />
     <ClCompile Include="Shapes\Triangle.cpp" />
-    <ClCompile Include="Games\Tetris\Tetromino.cpp" />
+    <ClCompile Include="Games\Tetris\Tetrominos\TetrominoController.cpp" />
     <ClCompile Include="Games\Tetris\Tetris.cpp" />
+    <ClCompile Include="Games\Tetris\Tetrominos\STetromino.cpp" />
+    <ClCompile Include="Games\Tetris\Tetrominos\TTetromino.cpp" />
     <ClCompile Include="Utils\FileCommandLoader.cpp" />
     <ClCompile Include="Utils\Utils.cpp" />
     <ClCompile Include="Utils\Vec2D.cpp" />
+    <ClCompile Include="Games\Tetris\Tetrominos\ZTetromino.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App\App.h" />
@@ -172,11 +182,18 @@
     <ClInclude Include="Games\BreakOut\Excluder.h" />
     <ClInclude Include="Games\BreakOut\BreakOut.h" />
     <ClInclude Include="Games\Game.h" />
+    <ClInclude Include="Games\Tetris\GhostedBlock.h" />
     <ClInclude Include="Input\GameController.h" />
     <ClInclude Include="Input\InputAction.h" />
     <ClInclude Include="Input\InputController.h" />
     <ClInclude Include="Games\BreakOut\Paddle.h" />
     <ClInclude Include="Games\BreakOut\LevelBoundary.h" />
+    <ClInclude Include="Games\Tetris\PlayField.h" />
+    <ClInclude Include="Games\Tetris\NextBlockPanel.h" />
+    <ClInclude Include="Games\Tetris\Tetrominos\OTetromino.h" />
+    <ClInclude Include="Games\Tetris\Tetrominos\ITetromino.h" />
+    <ClInclude Include="Games\Tetris\Tetrominos\JTetromino.h" />
+    <ClInclude Include="Games\Tetris\Tetrominos\LTetromino.h" />
     <ClInclude Include="Scenes\ArcadeScene.h" />
     <ClInclude Include="Scenes\GameScene.h" />
     <ClInclude Include="Scenes\Scene.h" />
@@ -188,11 +205,15 @@
     <ClInclude Include="Shapes\Shape.h" />
     <ClInclude Include="Shapes\Line2D.h" />
     <ClInclude Include="Shapes\Triangle.h" />
-    <ClInclude Include="Games\Tetris\Tetromino.h" />
+    <ClInclude Include="Games\Tetris\Tetrominos\TetrominoController.h" />
     <ClInclude Include="Games\Tetris\Tetris.h" />
+    <ClInclude Include="Games\Tetris\Tetrominos\Tetromino.h" />
+    <ClInclude Include="Games\Tetris\Tetrominos\STetromino.h" />
+    <ClInclude Include="Games\Tetris\Tetrominos\TTetromino.h" />
     <ClInclude Include="Utils\FileCommandLoader.h" />
     <ClInclude Include="Utils\Utils.h" />
     <ClInclude Include="Utils\Vec2D.h" />
+    <ClInclude Include="Games\Tetris\Tetrominos\ZTetromino.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,9 +1,7 @@
-﻿  BreakOut.cpp
-C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Input\InputController.h(5,22): warning C4099: 'GameController': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Input\GameController.h(6,7): message : vea la declaración de 'GameController'
-C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\BreakOut.cpp(144,59): warning C4244: 'argumento': conversión de 'uint32_t' a 'float'; posible pérdida de datos
-C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\BreakOut.cpp(164,39): warning C4244: '=': conversión de 'uint32_t' a 'float'; posible pérdida de datos
-C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\BreakOut.cpp(167,93): warning C4244: 'argumento': conversión de 'uint32_t' a 'float'; posible pérdida de datos
-C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\BreakOut.cpp(167,38): warning C4244: 'argumento': conversión de 'uint32_t' a 'float'; posible pérdida de datos
-C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\BreakOut.cpp(175,46): warning C4244: 'argumento': conversión de 'uint32_t' a 'float'; posible pérdida de datos
+﻿  NextBlockPanel.cpp
+  Tetris.cpp
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetris.cpp(96,16): warning C4244: '=': conversión de 'const uint32_t' a 'float'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetris.cpp(181,9): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetris.cpp(182,9): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+  Generando código...
   ArcadeApp.vcxproj -> C:\Users\Nacho\Documents\GitHub\SDLArcade\x64\Debug\ArcadeApp.exe
