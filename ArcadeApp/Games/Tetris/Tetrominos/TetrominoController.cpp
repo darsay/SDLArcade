@@ -3,6 +3,7 @@
 #include "AARectangle.h"
 #include "PlayField.h"
 #include "Screen.h"
+#include "TetrisScore.h"
 
 TetrominoController::TetrominoController(const Tetromino& tetromino) :
 	mTetromino(tetromino),
@@ -70,7 +71,7 @@ void TetrominoController::MoveRight(PlayField& playField)
 }
 
 
-bool TetrominoController::MoveDown(PlayField& playField)
+bool TetrominoController::MoveDown(PlayField& playField, TetrisScore& score)
 {
 	for (auto block : mBlocks)
 	{
@@ -79,7 +80,7 @@ bool TetrominoController::MoveDown(PlayField& playField)
 		int nextY = nextPosition.GetY() + 1;
 		if (nextY > playField.PLAYFIELD_HEIGHT - 1 || playField.mCells[nextX][nextY].isFilled)
 		{
-			playField.PlaceTetromino(this);
+			playField.PlaceTetromino(this, score);
 			return true;
 		}
 	}
@@ -87,10 +88,10 @@ bool TetrominoController::MoveDown(PlayField& playField)
 	return false;
 }
 
-void TetrominoController::Drop(PlayField& playField)
+void TetrominoController::Drop(PlayField& playField, TetrisScore& score)
 {
 	mPosition = mGhostedBlock.GetPosition();
-	playField.PlaceTetromino(this);
+	playField.PlaceTetromino(this, score);
 }
 
 void TetrominoController::Rotate(PlayField& playField)

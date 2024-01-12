@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <random>
 
+#include "App.h"
 #include "GameController.h"
 #include "ITetromino.h"
 #include "JTetromino.h"
@@ -13,6 +14,7 @@
 #include "Utils.h"
 #include "ZTetromino.h"
 
+
 void Tetris::Init(GameController& controller)
 {
 	controller.ClearAll();
@@ -21,10 +23,14 @@ void Tetris::Init(GameController& controller)
 	leftKeyAction.key = GameController::LeftKey();
 	leftKeyAction.action = [this](uint32_t dt, InputState state)
 		{
-			if (GameController::IsPressed(state))
+			if (mGameState == TetrisGameState::IN_GAME)
 			{
-				mCurrentTetromino->MoveLeft(mPlayField);
+				if (GameController::IsPressed(state))
+				{
+					mCurrentTetromino->MoveLeft(mPlayField);
+				}
 			}
+
 		};
 
 	controller.AddInputActionForKey(leftKeyAction);
@@ -33,9 +39,12 @@ void Tetris::Init(GameController& controller)
 	rightKeyAction.key = GameController::RightKey();
 	rightKeyAction.action = [this](uint32_t dt, InputState state)
 		{
-			if (GameController::IsPressed(state))
+			if (mGameState == TetrisGameState::IN_GAME)
 			{
-				mCurrentTetromino->MoveRight(mPlayField);
+				if (GameController::IsPressed(state))
+				{
+					mCurrentTetromino->MoveRight(mPlayField);
+				}
 			}
 		};
 
@@ -45,12 +54,15 @@ void Tetris::Init(GameController& controller)
 	downKeyAction.key = GameController::DownKey();
 	downKeyAction.action = [this](uint32_t dt, InputState state)
 		{
-			if (GameController::IsPressed(state))
+			if (mGameState == TetrisGameState::IN_GAME)
 			{
-				if (mCurrentTetromino->MoveDown(mPlayField))
+				if (GameController::IsPressed(state))
 				{
-					UpdateTetrominoStack();
-					mCurrentTetromino->Init(mPlayField);
+					if (mCurrentTetromino->MoveDown(mPlayField, mTetrisScore))
+					{
+						UpdateTetrominoStack();
+						mCurrentTetromino->Init(mPlayField);
+					}
 				}
 			}
 		};
@@ -61,9 +73,12 @@ void Tetris::Init(GameController& controller)
 	upKeyAction.key = GameController::UpKey();
 	upKeyAction.action = [this](uint32_t dt, InputState state)
 		{
-			if (GameController::IsPressed(state))
+			if (mGameState == TetrisGameState::IN_GAME)
 			{
-				mCurrentTetromino->Rotate(mPlayField);
+				if (GameController::IsPressed(state))
+				{
+					mCurrentTetromino->Rotate(mPlayField);
+				}
 			}
 		};
 
@@ -75,22 +90,46 @@ void Tetris::Init(GameController& controller)
 		{
 			if (mGameState == TetrisGameState::IN_START)
 			{
-				StartGame();
+				if (GameController::IsPressed(state))
+				{
+					StartGame();
+				}
 			}
 			else if (mGameState == TetrisGameState::IN_GAME)
 			{
 				if (GameController::IsPressed(state))
 				{
-					mCurrentTetromino->Drop(mPlayField);
+					mCurrentTetromino->Drop(mPlayField, mTetrisScore);
 					UpdateTetrominoStack();
 					mCurrentTetromino->Init(mPlayField);
 					CheckIfGameOver();
+				}
+			}
+			else
+			{
+				if (GameController::IsPressed(state))
+				{
+					SetToInitialScreen();
 				}
 			}
 
 		};
 
 	controller.AddInputActionForKey(dropKeyAction);
+
+	ButtonAction backAction;
+	backAction.key = GameController::CancelKey();
+	backAction.action = [this](uint32_t dt, InputState state)
+		{
+			if (GameController::IsPressed(state))
+			{
+				delete mCurrentTetromino;
+
+				App::Singleton().PopScene();
+			}
+		};
+
+	controller.AddInputActionForKey(backAction);
 
 
 	mTimeToFall = INITIAL_TIME_TO_FALL;
@@ -120,7 +159,7 @@ void Tetris::Update(uint32_t dt)
 			mCurrentTime = mTimeToFall;
 
 
-			if (mCurrentTetromino->MoveDown(mPlayField))
+			if (mCurrentTetromino->MoveDown(mPlayField, mTetrisScore))
 			{
 				UpdateTetrominoStack();
 				mCurrentTetromino->Init(mPlayField);
@@ -133,12 +172,34 @@ void Tetris::Update(uint32_t dt)
 
 void Tetris::Draw(Screen& screen)
 {
-	mPlayField.Draw(screen);
+	mPlayField.Draw(screen, mGameState);
 	mNextBlockPanel.Draw(screen);
+	mTetrisScore.Draw(screen);
+
+	AARectangle screenRect = AARectangle(Vec2D::Zero, App::Singleton().Width(), App::Singleton().Height());
+	const BitmapFont& font = App::Singleton().GetFont();
 
 	if (mGameState == TetrisGameState::IN_GAME)
 	{
 		mCurrentTetromino->Draw(screen, mPlayField);
+	}
+	else
+	{
+
+		screen.Draw(screenRect, Color::Black(), true, Color(0, 0, 0, 120));
+
+		if (mGameState == TetrisGameState::IN_START)
+		{
+			Vec2D pressStartTextPos = font.GetDrawPosition("Press A to play", screenRect, BFXA_CENTER, BFYA_CENTER);
+
+			screen.Draw(font, "Press A to play", pressStartTextPos);
+		}
+		else
+		{
+			Vec2D gameOverTextPos = font.GetDrawPosition("Game Over", screenRect, BFXA_CENTER, BFYA_CENTER);
+
+			screen.Draw(font, "Game Over", gameOverTextPos);
+		}
 	}
 
 }
@@ -181,7 +242,7 @@ void Tetris::CheckIfGameOver()
 		int x = mCurrentTetromino->GetPosition().GetX() + block.GetX();
 		int y = mCurrentTetromino->GetPosition().GetY() + block.GetY();
 
-		if(y < 0 || mPlayField.mCells[x][y].isFilled)
+		if (/*y < 0 || */mPlayField.mCells[x][y].isFilled)
 		{
 			GameOver();
 		}
@@ -190,7 +251,7 @@ void Tetris::CheckIfGameOver()
 
 void Tetris::GameOver()
 {
-	SetToInitialScreen();
+	mGameState = IN_LOSE_SCREEN;
 }
 
 void Tetris::FillStack()

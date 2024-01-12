@@ -1,10 +1,14 @@
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\App\App.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\App.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\App\Button.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Button.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\ButtonOptionsScene.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\ButtonOptionsScene.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\BitmapFont.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\BitmapFont.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\BreakOutGameLevel.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\BreakOutGameLevel.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\Block.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Block.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\Ball.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Ball.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\Excluder.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Excluder.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\BreakOut.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\BreakOut.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\GhostedBlock.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\GhostedBlock.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\BMPImage.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\BMPImage.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Input\GameController.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\GameController.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Input\InputController.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\InputController.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\BreakOut\Paddle.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Paddle.obj
@@ -15,6 +19,7 @@ C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetrominos\OTet
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetrominos\ITetromino.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\ITetromino.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetrominos\JTetromino.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\JTetromino.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetrominos\LTetromino.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\LTetromino.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\NotImplementedScene.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\NotImplementedScene.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\ArcadeScene.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\ArcadeScene.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Scenes\GameScene.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\GameScene.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Shapes\Circle.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Circle.obj
@@ -30,6 +35,8 @@ C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetrominos\Tetr
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetris.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Tetris.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetrominos\STetromino.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\STetromino.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetrominos\TTetromino.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\TTetromino.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\SpriteSheet.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\SpriteSheet.obj
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\TetrisScore.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\TetrisScore.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Utils\FileCommandLoader.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\FileCommandLoader.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Utils\Utils.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Utils.obj
 C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Utils\Vec2D.cpp;C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\x64\Debug\Vec2D.obj

@@ -137,12 +137,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="App\App.cpp" />
+    <ClCompile Include="App\Button.cpp" />
+    <ClCompile Include="Scenes\ButtonOptionsScene.cpp" />
+    <ClCompile Include="Graphics\BitmapFont.cpp" />
     <ClCompile Include="Games\BreakOut\BreakOutGameLevel.cpp" />
     <ClCompile Include="Games\BreakOut\Block.cpp" />
     <ClCompile Include="Games\BreakOut\Ball.cpp" />
     <ClCompile Include="Games\BreakOut\Excluder.cpp" />
     <ClCompile Include="Games\BreakOut\BreakOut.cpp" />
     <ClCompile Include="Games\Tetris\GhostedBlock.cpp" />
+    <ClCompile Include="Graphics\BMPImage.cpp" />
     <ClCompile Include="Input\GameController.cpp" />
     <ClCompile Include="Input\InputController.cpp" />
     <ClCompile Include="Games\BreakOut\Paddle.cpp" />
@@ -153,6 +157,7 @@
     <ClCompile Include="Games\Tetris\Tetrominos\ITetromino.cpp" />
     <ClCompile Include="Games\Tetris\Tetrominos\JTetromino.cpp" />
     <ClCompile Include="Games\Tetris\Tetrominos\LTetromino.cpp" />
+    <ClCompile Include="Scenes\NotImplementedScene.cpp" />
     <ClCompile Include="Scenes\ArcadeScene.cpp" />
     <ClCompile Include="Scenes\GameScene.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
@@ -168,6 +173,8 @@
     <ClCompile Include="Games\Tetris\Tetris.cpp" />
     <ClCompile Include="Games\Tetris\Tetrominos\STetromino.cpp" />
     <ClCompile Include="Games\Tetris\Tetrominos\TTetromino.cpp" />
+    <ClCompile Include="Graphics\SpriteSheet.cpp" />
+    <ClCompile Include="Games\Tetris\TetrisScore.cpp" />
     <ClCompile Include="Utils\FileCommandLoader.cpp" />
     <ClCompile Include="Utils\Utils.cpp" />
     <ClCompile Include="Utils\Vec2D.cpp" />
@@ -175,6 +182,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App\App.h" />
+    <ClInclude Include="App\Button.h" />
+    <ClInclude Include="Scenes\ButtonOptionsScene.h" />
+    <ClInclude Include="Graphics\BitmapFont.h" />
     <ClInclude Include="Games\BreakOut\BreakOutGameLevel.h" />
     <ClInclude Include="Games\BreakOut\Block.h" />
     <ClInclude Include="Games\BreakOut\Ball.h" />
@@ -183,6 +193,7 @@
     <ClInclude Include="Games\BreakOut\BreakOut.h" />
     <ClInclude Include="Games\Game.h" />
     <ClInclude Include="Games\Tetris\GhostedBlock.h" />
+    <ClInclude Include="Graphics\BMPImage.h" />
     <ClInclude Include="Input\GameController.h" />
     <ClInclude Include="Input\InputAction.h" />
     <ClInclude Include="Input\InputController.h" />
@@ -194,6 +205,7 @@
     <ClInclude Include="Games\Tetris\Tetrominos\ITetromino.h" />
     <ClInclude Include="Games\Tetris\Tetrominos\JTetromino.h" />
     <ClInclude Include="Games\Tetris\Tetrominos\LTetromino.h" />
+    <ClInclude Include="Scenes\NotImplementedScene.h" />
     <ClInclude Include="Scenes\ArcadeScene.h" />
     <ClInclude Include="Scenes\GameScene.h" />
     <ClInclude Include="Scenes\Scene.h" />
@@ -210,6 +222,8 @@
     <ClInclude Include="Games\Tetris\Tetrominos\Tetromino.h" />
     <ClInclude Include="Games\Tetris\Tetrominos\STetromino.h" />
     <ClInclude Include="Games\Tetris\Tetrominos\TTetromino.h" />
+    <ClInclude Include="Graphics\SpriteSheet.h" />
+    <ClInclude Include="Games\Tetris\TetrisScore.h" />
     <ClInclude Include="Utils\FileCommandLoader.h" />
     <ClInclude Include="Utils\Utils.h" />
     <ClInclude Include="Utils\Vec2D.h" />

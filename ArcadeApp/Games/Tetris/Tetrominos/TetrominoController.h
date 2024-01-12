@@ -7,6 +7,7 @@
 #include "GhostedBlock.h"
 #include "Tetromino.h"
 
+class TetrisScore;
 class Screen;
 class PlayField;
 
@@ -24,8 +25,8 @@ public:
 
 	void MoveLeft(PlayField& playField);
 	void MoveRight(PlayField& playField);
-	bool MoveDown(PlayField& playField);
-	void Drop(PlayField& playField);
+	bool MoveDown(PlayField& playField, TetrisScore& score);
+	void Drop(PlayField& playField, TetrisScore& score);
 
 	void Rotate(PlayField& playField);
 	std::array<Vec2D, 4> GetBlocks() const { return mBlocks; }

@@ -5,20 +5,17 @@
 
 #include "AARectangle.h"
 #include "App.h"
-#include "Tetrominos/OTetromino.h"
-#include "Tetrominos/TetrominoController.h"
+#include "Tetris.h"
+#include "TetrominoController.h"
 
 
-PlayField::PlayField()
-{
-}
 
-void PlayField::Init()
+void PlayField::Init(TetrisScore& tetrisScore)
 {
 	ResetPlayField();
 }
 
-void PlayField::Draw(Screen& screen)
+void PlayField::Draw(Screen& screen, TetrisGameState state)
 {
 	AARectangle backGround = { Vec2D(MARGIN - 1, MARGIN - 1), (mBlockSize * PLAYFIELD_WIDTH) + 2, (mBlockSize * PLAYFIELD_HEIGHT) + 2 };
 	screen.Draw(backGround, Color::White());
@@ -33,7 +30,14 @@ void PlayField::Draw(Screen& screen)
 			Cell cell = mCells[i][j];
 			if (cell.isFilled)
 			{
-				screen.Draw(cellSquare, Color::Black(), true, cell.color);
+				if (state == IN_GAME)
+				{
+					screen.Draw(cellSquare, Color::Black(), true, cell.color);
+				}
+				else
+				{
+					screen.Draw(cellSquare, Color::Black(), true, Color(120,120,120,255));
+				}
 			}
 			else
 			{
@@ -54,7 +58,7 @@ void PlayField::ResetPlayField()
 	}
 }
 
-void PlayField::PlaceTetromino(TetrominoController* tetromino)
+void PlayField::PlaceTetromino(TetrominoController* tetromino, TetrisScore& score)
 {
 	if (tetromino == nullptr) return;
 
@@ -70,10 +74,10 @@ void PlayField::PlaceTetromino(TetrominoController* tetromino)
 		placeCell.isFilled = true;
 	}
 
-	CheckLines();
+	CheckLines(score);
 }
 
-void PlayField::CheckLines()
+void PlayField::CheckLines(TetrisScore& score)
 {
 	int lineCount = 0;
 	std::vector<int> linesToClear;
@@ -105,8 +109,11 @@ void PlayField::CheckLines()
 		{
 			UpdateCellsAfterLine(line);
 		}
+
+		score.UpdateScore(lineCount);
 	}
-	//ADD SCORE ACCORDING TO LINE COUNT
+
+
 }
 
 void PlayField::ClearLine(unsigned int line)
@@ -127,7 +134,7 @@ void PlayField::UpdateCellsAfterLine(int line)
 			{
 				mCells[j][i].isFilled = true;
 				mCells[j][i].color = mCells[j][i - 1].color;
-				mCells[j][i-1].isFilled = false;
+				mCells[j][i - 1].isFilled = false;
 			}
 		}
 	}

@@ -2,12 +2,8 @@
 #include <SDL.h>
 #include <iostream>
 #include "ArcadeScene.h"
-#include "GameScene.h"
-#include "BreakOut.h"
 #include <memory>
 #include <cassert>
-
-#include "Tetris.h"
 
 App& App::Singleton()
 {
@@ -17,29 +13,17 @@ App& App::Singleton()
 
 bool App::Init(uint32_t width, uint32_t height, uint32_t mag)
 {
+	if (!mFont.Load("ArcadeFont"))
+	{
+		std::cout << "Could not load font!" << std::endl;
+		return false;
+	}
+
 	mnotrWindow = mScreen.Init(width, height, mag);
 
 	std::unique_ptr<ArcadeScene> arcadeScene = std::make_unique<ArcadeScene>();
 
 	PushScene(std::move(arcadeScene));
-
-	//BreakOut
-	{
-		std::unique_ptr<BreakOut> breakoutGame = std::make_unique<BreakOut>();
-
-		std::unique_ptr<GameScene> breakOutScene = std::make_unique<GameScene>(std::move(breakoutGame));
-
-		PushScene(std::move(breakOutScene));
-	}
-
-	//Tetris
-	{
-		std::unique_ptr<Tetris> tetrisGame = std::make_unique<Tetris>();
-
-		std::unique_ptr<GameScene> tetrisScene = std::make_unique<GameScene>(std::move(tetrisGame));
-
-		PushScene(std::move(tetrisScene));
-	}
 
 	return mnotrWindow != nullptr;
 }

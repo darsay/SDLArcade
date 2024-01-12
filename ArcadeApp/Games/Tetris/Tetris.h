@@ -4,6 +4,7 @@
 #include "Game.h"
 #include "NextBlockPanel.h"
 #include "PlayField.h"
+#include "TetrisScore.h"
 #include "TetrominoController.h"
 
 enum TetrisGameState
@@ -27,6 +28,7 @@ public:
 	
 private:
 	PlayField mPlayField;
+	TetrisScore mTetrisScore;
 	TetrominoController* mCurrentTetromino;
 	NextBlockPanel mNextBlockPanel;
 
@@ -36,6 +38,7 @@ private:
 	std::unordered_map<TetrominoType, Tetromino> mTetrominos;
 	std::vector<TetrominoType> mTetrominosStack;
 	Tetromino mNextTetromino;
+	//TetrisScore mTetrisScore;
 
 	TetrisGameState mGameState;
 

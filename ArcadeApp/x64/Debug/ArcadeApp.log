@@ -1,7 +1,9 @@
-﻿  NextBlockPanel.cpp
-  Tetris.cpp
-C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetris.cpp(96,16): warning C4244: '=': conversión de 'const uint32_t' a 'float'; posible pérdida de datos
-C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetris.cpp(181,9): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetris.cpp(182,9): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-  Generando código...
+﻿  Tetris.cpp
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\Screen.h(19,13): warning C4099: 'Sprite': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Graphics\SpriteSheet.h(7,8): message : vea la declaración de 'Sprite'
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Input\InputController.h(5,22): warning C4099: 'GameController': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Game.h(5,7): message : vea la declaración de 'GameController'
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetris.cpp(133,16): warning C4244: '=': conversión de 'const uint32_t' a 'float'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetris.cpp(240,9): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Nacho\Documents\GitHub\SDLArcade\ArcadeApp\Games\Tetris\Tetris.cpp(241,9): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
   ArcadeApp.vcxproj -> C:\Users\Nacho\Documents\GitHub\SDLArcade\x64\Debug\ArcadeApp.exe

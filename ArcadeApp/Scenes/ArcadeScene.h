@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Scene.h"
+#include "ButtonOptionsScene.h"
 #include <memory>
 
 enum eGame {
@@ -11,13 +11,11 @@ enum eGame {
 	NUM_GAMES
 };
 
-class ArcadeScene : public Scene
+class ArcadeScene : public ButtonOptionsScene
 {
 public:
-	ArcadeScene() = default;
-	virtual void Init() override;
+	ArcadeScene();
 	void Update(uint32_t dt) override;
-	void Draw(Screen& theScreen) override;
 	const std::string& GetSceneName() const override;
 
 private:
