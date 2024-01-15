@@ -61,6 +61,7 @@ void Tetris::Init(GameController& controller)
 					if (mCurrentTetromino->MoveDown(mPlayField, mTetrisScore))
 					{
 						UpdateTetrominoStack();
+						CheckLevel();
 						mCurrentTetromino->Init(mPlayField);
 					}
 				}
@@ -163,6 +164,7 @@ void Tetris::Update(uint32_t dt)
 			{
 				UpdateTetrominoStack();
 				mCurrentTetromino->Init(mPlayField);
+				CheckLevel();
 				CheckIfGameOver();
 			}
 
@@ -209,12 +211,24 @@ void Tetris::ResetGame()
 	mGameState = TetrisGameState::IN_START;
 	mPlayField.ResetPlayField();
 	mTetrominosStack.erase(mTetrominosStack.begin(), mTetrominosStack.end());
+	mTetrisScore.ResetScore();
+	mTimeToFall = INITIAL_TIME_TO_FALL;
+	mLevel = 0;
 }
 
 const std::string& Tetris::GetName() const
 {
 	static std::string name = "Tetris";
 	return name;
+}
+
+void Tetris::CheckLevel()
+{
+	if(mTetrisScore.GetScore()/1000 > mLevel)
+	{
+		++mLevel;
+		mTimeToFall -= 0.1f;
+	}
 }
 
 void Tetris::StartGame()

@@ -21,9 +21,26 @@ ArcadeScene::ArcadeScene() : ButtonOptionsScene(
 {
 }
 
+void ArcadeScene::Init()
+{
+	ButtonOptionsScene::Init();
+
+	mSpriteSheet.Load("PacmanSprites");
+	mSprite.Init(App::Singleton().GetBasePath() + "Assets\\Pacman_animations.txt", mSpriteSheet);
+	mSprite.SetAnimation("death", true);
+}
+
+void ArcadeScene::Draw(Screen& theScreen)
+{
+	ButtonOptionsScene::Draw(theScreen);
+
+	mSprite.Draw(theScreen);
+}
+
 
 void ArcadeScene::Update(uint32_t dt)
 {
+	mSprite.Update(dt);
 }
 
 const std::string& ArcadeScene::GetSceneName() const

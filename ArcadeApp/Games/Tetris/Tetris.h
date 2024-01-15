@@ -38,7 +38,8 @@ private:
 	std::unordered_map<TetrominoType, Tetromino> mTetrominos;
 	std::vector<TetrominoType> mTetrominosStack;
 	Tetromino mNextTetromino;
-	//TetrisScore mTetrisScore;
+	int mLevel;
+	void CheckLevel();
 
 	TetrisGameState mGameState;
 

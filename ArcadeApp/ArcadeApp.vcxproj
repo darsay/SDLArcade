@@ -80,7 +80,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris\Tetrominos;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris\Tetrominos;$(ProjectDir)Games\Asteroids;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -95,7 +95,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris\Tetrominos;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris\Tetrominos;$(ProjectDir)Games\Asteroids;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris\Tetrominos;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris\Tetrominos;$(ProjectDir)Games\Asteroids;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,7 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris\Tetrominos;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)App;$(ProjectDir)Graphics;$(ProjectDir)Input;$(ProjectDir)Scenes;$(ProjectDir)Shapes;$(ProjectDir)Games;$(ProjectDir)Games\Tetris\Tetrominos;$(ProjectDir)Games\Asteroids;$(ProjectDir)Games\Tetris;$(ProjectDir)Games\BreakOut;$(ProjectDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,6 +136,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Games\Asteroids\Ateroids.cpp" />
+    <ClCompile Include="Graphics\AnimatedSprite.cpp" />
+    <ClCompile Include="Graphics\AnimationPlayer.cpp" />
+    <ClCompile Include="Graphics\Animation.cpp" />
     <ClCompile Include="App\App.cpp" />
     <ClCompile Include="App\Button.cpp" />
     <ClCompile Include="Scenes\ButtonOptionsScene.cpp" />
@@ -181,6 +185,10 @@
     <ClCompile Include="Games\Tetris\Tetrominos\ZTetromino.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Games\Asteroids\Ateroids.h" />
+    <ClInclude Include="Graphics\AnimatedSprite.h" />
+    <ClInclude Include="Graphics\AnimationPlayer.h" />
+    <ClInclude Include="Graphics\Animation.h" />
     <ClInclude Include="App\App.h" />
     <ClInclude Include="App\Button.h" />
     <ClInclude Include="Scenes\ButtonOptionsScene.h" />

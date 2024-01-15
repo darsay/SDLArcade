@@ -3,6 +3,8 @@
 #include "ButtonOptionsScene.h"
 #include <memory>
 
+#include "AnimatedSprite.h"
+
 enum eGame {
 	TETRIS = 0,
 	BREAK_OUT,
@@ -15,10 +17,16 @@ class ArcadeScene : public ButtonOptionsScene
 {
 public:
 	ArcadeScene();
+	void Init() override;
+	void Draw(Screen& theScreen) override;
 	void Update(uint32_t dt) override;
 	const std::string& GetSceneName() const override;
 
 private:
 	std::unique_ptr<Scene> GetScene(eGame game);
+
+	//temp
+	AnimatedSprite mSprite;
+	SpriteSheet mSpriteSheet;
 };
 

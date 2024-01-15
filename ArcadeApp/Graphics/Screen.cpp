@@ -87,9 +87,32 @@ SDL_Window* Screen::Init(uint32_t w, uint32_t h, uint32_t mag, bool fast)
 			mnoptrWindowSurface = SDL_GetWindowSurface(moptrWindow);
 		}
 
-		mPixelFormat = SDL_AllocFormat(SDL_PIXELFORMAT_RGBA8888);
+		std::vector<std::string> s_preferredPixelFormats = {
+		"SDL_PIXELFORMAT_ARGB8888",
+		"SDL_PIXELFORMAT_RGBA8888",
+		"SDL_PIXELFORMAT_BGRA8888"
+		};
 
-		if(mFast)
+		SDL_RendererInfo info;
+		SDL_GetRendererInfo(mRenderer, &info);
+		int32_t foundIndex = -1;
+
+		for (Uint32 i = 0; i < info.num_texture_formats; i++)
+		{
+			auto iter = std::find(s_preferredPixelFormats.begin(), s_preferredPixelFormats.end(), std::string(SDL_GetPixelFormatName(info.texture_formats[i])));
+			if (iter != s_preferredPixelFormats.end())
+			{
+				foundIndex = i;
+				break;
+			}
+		}
+
+		assert(foundIndex != -1);
+		mPixelFormat = SDL_AllocFormat(info.texture_formats[foundIndex]);
+
+		//mPixelFormat = SDL_AllocFormat(SDL_GetWindowPixelFormat(moptrWindow) /*SDL_PIXELFORMAT_RGBA8888*/);
+
+		if (mFast)
 		{
 			mTexture = SDL_CreateTexture(mRenderer, mPixelFormat->format,
 				SDL_TEXTUREACCESS_STREAMING, w, h);
@@ -115,12 +138,12 @@ void Screen::SwapScreens()
 	{
 		ClearScreen();
 
-		if(mFast)
+		if (mFast)
 		{
 			uint8_t* textureData = nullptr;
 			int texturePitch = 0;
 
-			if(SDL_LockTexture(mTexture, nullptr, (void**)(&textureData), &texturePitch) >= 0)
+			if (SDL_LockTexture(mTexture, nullptr, (void**)(&textureData), &texturePitch) >= 0)
 			{
 				SDL_Surface* surface = mBackBuffer.GetSurface();
 

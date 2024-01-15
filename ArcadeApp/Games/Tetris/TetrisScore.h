@@ -15,6 +15,7 @@ public:
 
 	inline void ResetScore() { mScore = 0; }
 	void UpdateScore(int numLines);
+	inline int GetScore() const { return mScore; }
 
 
 private:
